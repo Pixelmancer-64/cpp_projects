@@ -1,49 +1,42 @@
 #include<iostream>
-#include<time.h>
-#include<stdlib.h>
+#include<fstream>
+#include<conio.h>
 using namespace std;
 
 main()
 {
-int i, j,  x;
-int vetor[x];
-int vetor2[x];
 
-cout<<"Digite o número de colunas do vetor: \n";
-cin>>x;
+	ofstream entrada3;
+	ifstream entrada;
+	string nome, pulo;
+	float nota;
+	
+	entrada3.open("Dados.txt");
+	entrada.open("Dadosduplos.txt", ios::app);
+    
+   
 
-cout<<"Digite o valor da coluna correspondente: \n";
+	cout<< "Forneca a nome do aluno: ";
+	getline(cin,nome);
+	entrada3<< "\n" <<nome;
+	cout<< "Forneca a primeira nota do aluno: ";
+	cin >> nota;
+	entrada3 << "\n" <<nota;	
+	cout<< "Forneca a segunda nota do aluno: ";
+    cin >> nota;
+	entrada3 << "\n" <<nota; 
+	
+		while(!entrada.eof())
+	{
+	
+	getline(entrada, nome);
+	entrada3 << "\n" << nome;
+	
+    }
+	
+	entrada.close();
+	entrada3.close();
 
-for(i=0; i<x; i++)
-{
-cout<< i << " = ";
-cin>>vetor[i];
-}
-
-
-
-
-
-cout<< "O valor convertido corresponde a: \n";
-
-j = x-1;
-
-for(i=0; i<x; i++)
-{
- vetor2[i] = vetor[j];
- j--;
- 
-}
-j=0;
-for(i=0; i<x; i++)    //////erroaqui
-{
-	vetor[i] = vetor2[j];
- cout<< vetor[i];
- j++;	
-}
-
-
-
-cout<< "\n";
-system("pause");	
+cout << "AMIGO";
+getch();	
 }
