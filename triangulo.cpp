@@ -16,7 +16,7 @@ float triangulo (float a1, float b1)
 	return(c);
 }
 
-main()
+int main()
 {
 	float a,b,c,r;
 	cout << "Declare o valor do lado a: ";
